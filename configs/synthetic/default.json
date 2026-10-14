@@ -1,0 +1,25 @@
+{
+    "name": "default",
+    "scene": "assets/blends/small_armor_plate.blend",
+    "cameras": {
+        "left": "assets/models/basler_kowa_sample.cameramodel"
+    },
+    "render": {
+        "width_px": 960,
+        "height_px": 600
+    },
+    "poses": {
+        "type": "inline",
+        "items": [
+            {
+                "translation_m": [0, 0, 0.125],
+                "rotation": {
+                    "type": "euler",
+                    "yaw_deg": 15,
+                    "pitch_deg": 15,
+                    "roll_deg": 0
+                }
+            }
+        ]
+    }
+}
