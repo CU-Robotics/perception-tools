@@ -1,0 +1,37 @@
+#!/bin/bash
+set -euo pipefail
+
+cd /workspace
+
+STAGE="${1:-all}"
+CONFIG="${2:-configs/synthetic/default.json}"
+
+# read blender scene from config
+SCENE=$(python3 -c "from synthetic.common import get_config; print(str(get_config().scene))" --config "$CONFIG")
+
+bake() {
+    python3 -m synthetic.bake_poses --config "$CONFIG"
+}
+
+render() {
+    /opt/blender/blender -b "$SCENE" --python-exit-code 1 -P src/synthetic/render_pose.py -- --config "$CONFIG"
+}
+
+postprocess() {
+    python3 -m synthetic.postprocess --config "$CONFIG"
+}
+
+case "$STAGE" in
+    all)
+        bake
+        render
+        postprocess
+        ;;
+    bake|render|postprocess)
+        "$STAGE"
+        ;;
+    *)
+        echo "Unknown stage: $STAGE" >&2
+        exit 1
+        ;;
+esac

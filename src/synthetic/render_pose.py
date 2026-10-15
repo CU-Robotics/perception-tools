@@ -1,11 +1,12 @@
-import bpy
 import json
 import sys
-import math
 import argparse
 import numpy as np
 from pathlib import Path
-from mathutils import Matrix, Vector
+
+# blender imports
+import bpy  # type: ignore
+from mathutils import Matrix  # type: ignore
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
