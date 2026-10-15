@@ -1,5 +1,5 @@
 # perception-tools
-Camera calibration and perception tools for CU-Robotics' hive repository. Most tools must be run inside the `calibration-tools` docker service. Use a combination of the compose YAMLs when starting up the service:
+Camera calibration and perception tools for CU Robotics' hive repository. Most tools must be run inside the `calibration-tools` docker service. Use a combination of the compose YAMLs when starting up the service:
 * `compose.x11.yaml`: Accommodate X11 displays (for `imshow` and other GUIs). Open a PR if you use wayland.
 * `compose.nvidia.yaml`: Mount an NVIDIA GPU for hardware acceleration. NVIDIA Container Toolkit required.
 
