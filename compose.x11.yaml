@@ -3,8 +3,6 @@ services:
     environment:
       DISPLAY: ${DISPLAY}
       XAUTHORITY: /tmp/.docker.xauth
-      LIBGL_ALWAYS_SOFTWARE: "true"
-      XDG_RUNTIME_DIR: /tmp/runtime-root
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /tmp/docker.xauth:/tmp/.docker.xauth:ro

@@ -3,6 +3,7 @@ build/
 __pycache__/
 
 # keep out junk
+.scratch
 *.png
 *.cameramodel
 

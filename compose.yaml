@@ -9,4 +9,3 @@ services:
     volumes:
       - .:/workspace
       - ~/hive-calib:/hive-calib
-      - /tmp/hive-models:/tmp/hive-models
